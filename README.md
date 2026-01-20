@@ -32,7 +32,15 @@
 
 ## ------------------------------*********************--------------------------
 
+
 ### Now we will write jenkinsfile that copies all the necessary files to the remote ansible server and executes ansible playbook commands on the ansible remote server.
+
+### We are executing pipeline on a jenkins server, so jenkins server will check out this repository and have all these files on jenkins server in a build pipeline. Now, jenkins server (the pipeline) will have to trigger or call anisble playbook on remote ansible server and that means the playbook, inventory file and ansible cfg have to be available on the ansible server so that ansible playbook commands can be executed there. So jenkins have to copy those files from this project directory to the remote ansible server. In additin to these 3 ansible files, we also want to copy private_key_file to the ansible server because when ansible playbook get executed, with these configuration, ansible will look for a pem file, that means this file should be available in ansible server from the pipeline. 
+
+#### So total there are 4 files that needs to be copied to ansible server from jenkins pipeline
+
+#### Finally we are executing commands on ansible server from jenkins pipeline
+
 
 
 
